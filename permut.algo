@@ -1,0 +1,33 @@
+ALGORITHM charachter_counter
+VAR
+    ph: STRING[50];
+    i: INTEGER:=0;
+    cptChar, cptW, cptV:INTEGER;
+
+BEGIN
+    cptChar:= 0;
+    cptV:= 0;
+    cptW:= 1;
+
+    Write("Give me the sentence: ");
+    Read(ph);
+    ph.toLower();
+
+    WHILE (ph[i] <> '.') DO
+        cptChar:= cptChar +1;
+
+        IF (ph[i]= ' ') THEN
+            cptW:= cptW +1; 
+        END_IF
+
+        IF (ph[i] in ['e','i','o','a','u']) THEN
+            cptV:= cptV +1; 
+        END_IF
+
+        i:= i+1;
+
+    END_WHILE
+    Write("Length of the sentence:", cptChat);
+    Write("Number of words in the sentence:", cptW)
+    Write("Number of vowels in the sentence:", cptV)
+END
